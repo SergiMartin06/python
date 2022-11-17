@@ -9,6 +9,7 @@ while(opcio!=0):
     0. Sortir
     """
     )
+    
     opcio=input("Selecciona l'opcio que vulgui: ")
     match opcio:
         case "1":
