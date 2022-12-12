@@ -1,11 +1,11 @@
-def crear_punts (a):
-    def crear_repetits(a):
+def crear_repetido(a,b):
+        c = int(a)*b
+        return c
 
-        c=1
-    for a in a:
-        c = b*c
-    return c
+def crear_puntos(a):
+    for e in a:
+        c=crear_repetido(int(e),'.')
+        print(c)
 
-b = print = input ("Afegeix un numero: ")
-c = print = input ("Afegeix un caracter: ")
-print (b*c)
+a=input("Escribe una lista numerica de elementos: ")
+crear_puntos(a)

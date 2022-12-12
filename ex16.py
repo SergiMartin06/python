@@ -1,10 +1,9 @@
-def invertir(s):
-    
-    llista=list(s)
-    a = llista[::-1]
-    return a
+def invertir(a):
+    b=list(a)
+    c=b[::-1]
+    r= " ".join(c)
+    return r
 
-s = ("Soc del Ramis")
-b = invertir (s)
-for i in b:
-    print (i)
+b=input("Introduzca una palabra: ")
+c=invertir(b)
+print("La palabra" ,b, " si la giras es" ,c)

@@ -1,10 +1,7 @@
-def crear_repetits(a):
+def crear_repetido(a,b):
+        c = int(a)*b
+        return c
 
-    multiplicado=1
-    for a in a:
-        multiplicado = b*c
-    return multiplicado
-
-b = print = input ("Afegeix un numero: ")
-c = print = input ("Afegeix un caracter: ")
-print (b*c)
+a=input("Indique un numero: ")
+b=input("Indique un caracter: ")
+print("El caracter" ,b, "repetido" ,a, "veces, es: ",crear_repetido(a,b))

@@ -1,15 +1,22 @@
-def es_palindromo(a):
-    inicio = 0
-    fin = len(a) - 1
-    while a[inicio] == a[fin]:
-        if inicio >= fin:
-            return True
-        inicio += 1
-        fin -= 1
+def invertir(a):
+    b=list(a)
+    c=b[::-1]
+    r= "".join(c)
+    return r
+
+def palindromo(a):
+  c=invertir(a)
+  x=0
+  for i in range(len(a)):
+    if a[i]!=c[i]:
+      x+=1
+  if x == 0:
+    return True
+  else:
     return False
 
-a = input ("Añade una palabra: ")
-if (True):    
-    print("Si es")
+a=input("Introduce una palabra: ")
+if palindromo(a):
+  print("Es palindromo")
 else:
-    print("No es")
+  print("No es palindromo")
