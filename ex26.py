@@ -10,3 +10,6 @@ a = ["111", "11", "1010","1000"]
 b = llbintodec(a)
 for i, e in enumerate(b):
     print("El número binari : ", a[i], " es correspon amb el número decimal: ", e)
+
+
+
