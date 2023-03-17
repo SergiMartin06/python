@@ -18,5 +18,4 @@ def nums_que_comencen_per(l, c):
 
 #PP
 a=llegir()
-c=input("Introduce el caracter que desea buscar: ")
-nums_que_comencen_per(a,c)
+nums_que_comencen_per(a)
