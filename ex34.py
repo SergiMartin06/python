@@ -1,28 +1,49 @@
-def random(j):
-    import random
-    for i in range(1):
-        random.uniform(1000, 9999)
+import random
 
-x=[1,9,2,3]
+def Calcular_random(j):
+    b=[]
+    for i in range (4):
+        b.append(random.randint(0.9))
+    return
 
-a=int(input("Introduce una cifra: "))
-if a==x[0]:
-    print("Has adivinado la primera cifra. ")
-else:
-    print("No es esa cifra.")
+def leer():
+    a=[]
+    for i in range (4):
+        b.append(int(input("Intro num: ")))
+    return b
 
-b= input("Introduce otra cifra: ")
-if a==x[1]:
-    print("Has adivinado la primera cifra. ")
-else:
-    print("No es esa cifra.")
-c= input("Introduce otra cifra: ")
-if a==x[2]:
-    print("Has adivinado la primera cifra. ")
-else:
-    print("No es esa cifra.")
-d= input("Introduce una ultima cifra: ")
-if a==x[3]:
-    print("Has adivinado la primera cifra. ")
-else:
-    print("No es esa cifra.")
+def comparar(a,b):
+    a,b=0
+    for i in range (4):
+        if a[i]==b[i]:
+            a+=1
+        elif b[i] in a:
+            b+=1
+        else:
+            c+=1
+    if a ==4:
+        print("")
+        return 1
+    elif a>0 and y>0:
+        print("")
+        return 0
+    elif a==0 and y>0:
+        print("")
+        return 0
+    elif a>0 and y==0:
+        print("")
+        return 0
+    else:
+        print("")
+        return 0
+
+
+
+a=Calcular_random()
+sortir=0
+while sortir!=1:
+    b=leer()
+    if comparar(a,b) ==1:
+        sortir=1
+    else:
+        sortir=0
