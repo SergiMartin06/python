@@ -1,3 +1,6 @@
+import random
+
+
 def menu ():
     print("""
     
@@ -12,6 +15,7 @@ def menu ():
     return a
 
 def Llistes_NombresAleatoris():
+
 
 
 def Fitxers():
@@ -46,3 +50,5 @@ while a!="0":
             a=Llibreria
         case "6":
             a=Aplicacio_de_serveis
+        case other:
+            print("No es una opcio.")
