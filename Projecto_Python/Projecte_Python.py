@@ -18,7 +18,7 @@ def menu ():
 
 def Llistes_NombresAleatoris():
     l=("Mapa" , "Catalejo", "Chancla", "Guante", "Cuchillo")
-    objeto= l(random.randint(1,6))
+    objeto= l(random.randint(0,4))
     print("Te ataca una manada de lobos, para sobrevivir tendras que sacar un objeto de tu mochila para poder hacer algo.")
     if objeto == "Mapa":
         print("Gracias al mapa, escapas por una ruta.")
