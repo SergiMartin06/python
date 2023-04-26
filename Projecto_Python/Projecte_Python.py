@@ -37,10 +37,10 @@ def Llistes_NombresAleatoris():
 a=1
 while a!=0:
     if a!=0:
-        a=menu()
+        a=menu
         match a:
             case "1":
-                Llistes_NombresAleatoris
+                print("Hola")
 
             
       
