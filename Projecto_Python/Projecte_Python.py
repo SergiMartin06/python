@@ -32,10 +32,24 @@ def Llistes_NombresAleatoris():
         print("Sobrevives")
 
 def agenda():
-    with open("/home/cicles/archivo.txt", "w") as f:
-        f.read
-        f.write("")
-        f.close
+    segunda_funcion="Agenda"
+    a=0
+    while a!=".":
+        if a!=".":
+            with open("/home/cicles/archivo.txt", "a") as f:
+                a=input("Añade tus planes: ")
+                f.write(a+"\n")
+                f.read()
+
+
+
+
+
+
+
+
+
+                
 
 
 
