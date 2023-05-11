@@ -1,21 +1,21 @@
 import random as random
 
 def armarBaraja():
-baraja = []
-#EJEMPLO CARTA: ROJA 6, VERDE 4, AMARILLO SALTADO
-colores = ["ROJO","VERDE","AZUL","AMARILLO"]
-valores = [0,1,2,3,4,5,6,7,8,9,"+2", "SALTADO", "REVERSA"]
-comodines = ["COMODIN","COMODIN +4"]
-for color in colores:
-    for valor in valores:
-        cartaVal = "{} {}".format(color, valor)
-        baraja.append(cartaVal)
-        if valor != 0:
+    baraja = []
+    #EJEMPLO CARTA: ROJA 6, VERDE 4, AMARILLO SALTADO
+    colores = ["ROJO","VERDE","AZUL","AMARILLO"]
+    valores = [0,1,2,3,4,5,6,7,8,9,"+2", "SALTADO", "REVERSA"]
+    comodines = ["COMODIN","COMODIN +4"]
+    for color in colores:
+        for valor in valores:
+            cartaVal = "{} {}".format(color, valor)
             baraja.append(cartaVal)
-            for i in range(4):
-                baraja.append(comodines[0])
-                baraja.append(comodines[1])
-        return baraja
+            if valor != 0:
+                baraja.append(cartaVal)
+                for i in range(4):
+                    baraja.append(comodines[0])
+                    baraja.append(comodines[1])
+            return baraja
 
 def shuffleDeck(baraja):
     for cartaPos in range(len(baraja)):
