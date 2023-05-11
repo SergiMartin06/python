@@ -17,4 +17,4 @@ def Llistes_NombresAleatoris():
 
 
 
-Llistes_NombresAleatoris
+a=Llistes_NombresAleatoris()

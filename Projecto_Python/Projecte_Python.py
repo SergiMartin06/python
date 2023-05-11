@@ -40,18 +40,20 @@ def agenda():
 
 
 
+
 a = 1
 while a != 0:
     a = menu()
-    if a == 1:
-        Llistes_NombresAleatoris()
-    elif a == 2:
-        agenda()
-    elif a == 3:
-        juego()
-    elif a == 4:
-        print("Opción 4 seleccionada")
-    elif a == 0:
-        print("Saliendo del programa...")
-    else:
-        print("Opción inválida, intenta de nuevo")
+    match a:
+        case 1:
+            print("Has escogido la opcion 1")
+            primera_funcion=Llistes_NombresAleatoris()
+        
+        case 2:
+            print ("Has escogido la 2 opcion")
+            segunda_funcion=agenda()
+        
+        case other:
+            print("Opcion no valida")
+
+        
