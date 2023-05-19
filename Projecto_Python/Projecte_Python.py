@@ -61,58 +61,59 @@ def agenda():
 
 
 
-def ahorcado():
-    AHORCADO = ['''
-        +---+
-        |   |
-            |
-            |
-            |
-            |
-        =========''', '''
-        +---+
-        |   |
-        O   |
-            |
-            |
-            |
-        =========''', '''
-        +---+
-        |   |
-        O   |
-        |   |
-            |
-            |
-        =========''', '''
-        +---+
-        |   |
-        O   |
-        /|   |
-            |
-            |
-        =========''', '''
-        +---+
-        |   |
-        O   |
-        /|\  |
-            |
-            |
-        =========''', '''
-        +---+
-        |   |
-        O   |
-        /|\  |
-        /    |
-            |
-        =========''', '''
-        +---+
-        |   |
-        O   |
-        /|\  |
-        / \  |
-            |
-        =========''']
-    palabras = 'valoracion aprenderpython comida juego python web imposible variable curso volador cabeza reproductor mirada escritor billete lapicero celular valor revista gratuito disco voleibol anillo estrella'.split()
+
+AHORCADO = ['''
+    +---+
+    |   |
+        |
+        |
+        |
+        |
+    =========''', '''
+    +---+
+    |   |
+    O   |
+        |
+        |
+        |
+    =========''', '''
+    +---+
+    |   |
+    O   |
+    |   |
+        |
+        |
+    =========''', '''
+    +---+
+    |   |
+    O   |
+    /|   |
+        |
+        |
+    =========''', '''
+    +---+
+    |   |
+    O   |
+    /|\  |
+        |
+        |
+    =========''', '''
+    +---+
+    |   |
+    O   |
+    /|\  |
+    /    |
+        |
+    =========''', '''
+    +---+
+    |   |
+    O   |
+    /|\  |
+    / \  |
+        |
+    =========''']
+
+palabras = 'valoracion aprenderpython comida juego python web imposible variable curso volador cabeza reproductor mirada escritor billete lapicero celular valor revista gratuito disco voleibol anillo estrella'.split()
  
 def buscarPalabraAleat(listaPalabras):
     # Esta funcion retorna una palabra aleatoria.
@@ -213,7 +214,7 @@ while a != 0:
         
         case 3:
             print("Has escogido la opcion 3")
-            juego_a
+            caca=juego_a()
 
         case other:
             print("Opcion no valida")
