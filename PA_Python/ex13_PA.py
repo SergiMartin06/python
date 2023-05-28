@@ -57,6 +57,18 @@ class centaure(cavall,humano):
 
 class xou:
     def quisoc(self):
+        print("Duck type, això és el que sóc")
+    def moure(self):
+        print("Duck type, així em moc")
+    def xerrar(self):
+        print("Duck type, així xerr")
         
 
-f = [humano("Humà","32","Joan"), cavall('mamífer', 10), delfin('mamífer', 23), abeja('insecte', 1), hijo("Humà","6","Pau",("Joan","Luz")), Xou(), Centaure("Centaure","40","Quiron")]
+f = [humano("Humà","32","Joan"), cavall('mamífer', 10), delfin('mamífer', 23), abeja('insecte', 1), hijo("Humà","6","Pau",("Joan","Luz")), xou(), centaure("Centaure","40","Quiron")]
+
+for e in f:
+	e.quisoc()
+	e.moure()
+	e.xerrar()
+	if type(e)==hijo:
+        e.nompares()
