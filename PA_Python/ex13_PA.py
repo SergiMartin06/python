@@ -70,5 +70,7 @@ for e in f:
 	e.quisoc()
 	e.moure()
 	e.xerrar()
-	if type(e)==hijo:
-        e.nompares()
+if type(e)==hijo:
+    e.nompares()
+if type(e)==abeja:
+    e.picar()
