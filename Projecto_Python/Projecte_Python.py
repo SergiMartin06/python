@@ -48,7 +48,7 @@ def menu_agenda():
 
 
 
-def agenda():
+def agenda1():
     segunda_funcion="Agenda"
     a=0
     while a!=".":
@@ -210,11 +210,14 @@ while a != 0:
         
         case 2:
             print ("Has escogido la 2 opcion")
-            segunda_funcion=agenda()
+            segunda_funcion=agenda1()
         
         case 3:
             print("Has escogido la opcion 3")
             caca=juego_a()
+
+        case 4:
+            print("Has escogido la opcion 4")
 
         case other:
             print("Opcion no valida")
