@@ -5,16 +5,13 @@ def abrir_google():
     webbrowser.open("https://www.google.com")
 
 ventana = tk.Tk()
-ventana.title("Programa con Menú")
-
+ventana.title("Programa con Menú (Google)")
 menu = tk.Menu(ventana)
 
-archivo_menu = tk.Menu(menu, tearoff=0)
-archivo_menu.add_command(label="Abrir", command=abrir_google)
-archivo_menu.add_separator()
-archivo_menu.add_command(label="Salir", command=ventana.quit)
 
-menu.add_cascade(label="Archivo", menu=archivo_menu)
+boton_enviar = tk.Button(ventana, text="Enviar", command=abrir_google)
+boton_enviar.grid(row=5, column=0)
+
 
 ventana.config(menu=menu)
 

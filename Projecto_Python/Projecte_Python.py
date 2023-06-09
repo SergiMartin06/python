@@ -1,6 +1,7 @@
 import random
 import os
-import tkinter
+import tkinter as tk
+import webbrowser
 
 def menu():
     print("""
@@ -59,6 +60,21 @@ def agenda1():
                 f.read()
           
 
+def abrir_google():
+    webbrowser.open("https://www.google.com")
+
+def ventana(): 
+    ventana = tk.Tk()
+    ventana.title("Programa con Menú (Google)")
+    menu = tk.Menu(ventana)
+    
+    
+    boton_enviar = tk.Button(ventana, text="Enviar", command=abrir_google)
+    boton_enviar.grid(row=5, column=0)
+
+    ventana.config(menu=menu)
+
+    ventana.mainloop()
 
 
 
@@ -218,7 +234,7 @@ while a != 0:
 
         case 4:
             print("Has escogido la opcion 4")
-
+            aa=ventana()
         case other:
             print("Opcion no valida")
 
