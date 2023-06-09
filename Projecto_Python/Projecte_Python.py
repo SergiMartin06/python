@@ -6,10 +6,12 @@ import webbrowser
 def menu():
     print("""
     
+        Menu Projecte Python
+
     1. Funcio amb llistes i nombres aleatoris
-    2. 2a opcio
-    3. 3a opcio
-    4. 4a opcio
+    2. Agenda
+    3. Juego - Ahorcado
+    4. Ventana - Boton a Google
     0. Salir
 
     """)
@@ -200,7 +202,7 @@ AHORCADO = ['''
         |
     =========''']
 
-palabras = 'valoracion aprenderpython comida juego python web imposible variable curso volador cabeza reproductor mirada escritor billete lapicero celular valor revista gratuito disco voleibol anillo estrella'.split()
+palabras = "Serfi", "Sergio", "Python", "Epi".split()
  
 def buscarPalabraAleat(listaPalabras):
     # Esta funcion retorna una palabra aleatoria.
@@ -233,7 +235,7 @@ def elijeLetra(algunaLetra):
             print ('Introduce una sola letra.') 
         elif letra in algunaLetra:
             print ('Ya has elegido esa letra ¿Qué tal si pruebas con otra?')
-        elif letra not in 'abcdefghijklmnopqrstuvwxyz':
+        elif letra not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ':
             print ('Elije una letra.')
         else:
             return letra
@@ -333,6 +335,11 @@ while a != 0:
         case 4:
             print("Has escogido la opcion 4")
             aa=ventana()
+
+        case 0:
+            print("Nos vemos")
+            a=0
+
         case other:
             print("Opcion no valida")
 

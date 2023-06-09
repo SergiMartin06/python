@@ -7,4 +7,3 @@ a = ["Adrià", "Aroa", "Sebas", "Eric", "Sergi Pons", "Sergio Bolívar", "Sergi 
 with open("Ex12.txt","w") as f:
 	for e in a:
 		f.write(e+"\n")
-with open("Ex12.txt","a") as f:
