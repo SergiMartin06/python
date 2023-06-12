@@ -3,6 +3,9 @@ import os
 import tkinter as tk
 import webbrowser
 
+
+#Menu Principal
+
 def menu():
     print("""
     
@@ -19,6 +22,7 @@ def menu():
     a = int(input("Selecciona una opcion: "))
     return a
 
+#Funcion lista aleatorias
 
 def Llistes_NombresAleatoris():
     l = ["Mapa", "Catalejo", "Chancla", "Guante", "Cuchillo"]
@@ -36,7 +40,9 @@ def Llistes_NombresAleatoris():
         print("Sobrevives")
 
 
-def mostrar_menu():
+#Funciones sobre agenda
+
+def mostrar_menu_agenda():
     print("""
     
             Agenda - Menú:
@@ -46,7 +52,7 @@ def mostrar_menu():
     2. Buscar contacto
     3. Editar contacto
     4. Eliminar contacto
-    5. Salir
+    0. Salir
     
     """)
 
@@ -131,7 +137,9 @@ def eliminar_contacto():
 
     with open("agenda.txt", "w") as archivo:
         archivo.writelines(nuevos_contactos)
-          
+
+
+#Funciones sobre la ventana
 
 def abrir_google():
     webbrowser.open("https://www.google.com")
@@ -149,6 +157,8 @@ def ventana():
 
     ventana.mainloop()
 
+
+#Funciones Ahorcado
 
 
 AHORCADO = ['''
@@ -202,11 +212,10 @@ AHORCADO = ['''
         |
     =========''']
 
-palabras = "Serfi", "Sergio", "Python", "Epi".split()
+palabras = "serfi", "sergio", "python", "epi".split()
  
 def buscarPalabraAleat(listaPalabras):
-    # Esta funcion retorna una palabra aleatoria.
-    palabraAleatoria = random.randint(0, len(listaPalabras) - 1)
+    palabraAleatoria = random.randint(0, len(listaPalabras))
     return listaPalabras[palabraAleatoria]
  
 def displayBoard(AHORCADO, letraIncorrecta, letraCorrecta, palabraSecreta):
@@ -218,15 +227,14 @@ def displayBoard(AHORCADO, letraIncorrecta, letraCorrecta, palabraSecreta):
         print (letra, fin)
     print ("")
     espacio = '_' * len(palabraSecreta)
-    for i in range(len(palabraSecreta)): # Remplaza los espacios en blanco por la letra bien escrita
+    for i in range(len(palabraSecreta)):
         if palabraSecreta[i] in letraCorrecta:
             espacio = espacio[:i] + palabraSecreta[i] + espacio[i+1:]
-    for letra in espacio: # Mostrará la palabra secreta con espacios entre letras
+    for letra in espacio: 
         print (letra, fin)
     print ("")
  
 def elijeLetra(algunaLetra):
-    # Devuelve la letra que el jugador ingreso. Esta función hace que el jugador ingrese una letra y no cualquier otra cosa
     while True:
         print ('Adivina una letra:')
         letra = input()
@@ -235,13 +243,12 @@ def elijeLetra(algunaLetra):
             print ('Introduce una sola letra.') 
         elif letra in algunaLetra:
             print ('Ya has elegido esa letra ¿Qué tal si pruebas con otra?')
-        elif letra not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ':
+        elif letra not in 'abcdefghijklmnopqrstuvwxyz':
             print ('Elije una letra.')
         else:
             return letra
  
 def empezar():
-    # Esta funcion devuelve True si el jugador quiere volver a jugar, de lo contrario devuelve False
     print ('Quieres jugar de nuevo? (Si o No)')
     return input().lower().startswith('s')
 
@@ -254,11 +261,9 @@ def juego_a():
     finJuego = False
     while True:
         displayBoard(AHORCADO, letraIncorrecta, letraCorrecta, palabraSecreta)
-        # El usuairo elije una letra.
         letra = elijeLetra(letraIncorrecta + letraCorrecta)
         if letra in palabraSecreta:
             letraCorrecta = letraCorrecta + letra
-            # Se fija si el jugador ganó
             letrasEncontradas = True
             for i in range(len(palabraSecreta)):
                 if palabraSecreta[i] not in letraCorrecta:
@@ -269,12 +274,11 @@ def juego_a():
                 finJuego = True
         else:
             letraIncorrecta = letraIncorrecta + letra
-            # Comprueba la cantidad de letras que ha ingresado el jugador y si perdió
             if len(letraIncorrecta) == len(AHORCADO) - 1:
                 displayBoard(AHORCADO, letraIncorrecta, letraCorrecta, palabraSecreta)
                 print ('¡Se ha quedado sin letras!\nDespues de ' + str(len(letraIncorrecta)) + ' letras erroneas y ' + str(len(letraCorrecta)) + ' letras correctas, la palabra era "' + palabraSecreta + '"')
                 finJuego = True
-        # Pregunta al jugador si quiere jugar de nuevo
+
         if finJuego:
             if empezar():
                 letraIncorrecta = ""
@@ -301,10 +305,9 @@ while a != 0:
         
         case 2:
             print ("Has escogido la 2 opcion")
-            segunda_funcion=mostrar_menu()
+            segunda_funcion=mostrar_menu_agenda()
             a=0
             while a!="1":
-                mostrar_menu()
                 opcion=int(input("Selecciona una opcion: "))
                 
                 match opcion:
@@ -321,7 +324,7 @@ while a != 0:
                     case 4:
                         eliminar_contacto()
 
-                    case 5:
+                    case 0:
                         print("Adios!")
                         a="1"
                     
