@@ -1,34 +1,38 @@
 import requests
 
-# Definir el nombre del superhéroe
-nombre_superheroe = "spider-man"
 
-# Construir la URL de la API con el nombre del superhéroe
-url = f"https://superheroapi.com/api/your-api-key/search/{nombre_superheroe}"
+"""
+parametres={"access_key":"9d39e29bff4eb2841c644d72789c3bac",
+   		 "symbols":"AENA.BMEX"}
+# Fem la petició indicant l'url i els paràmetres
+res=requests.get("http://api.marketstack.com/v1/eod",params=parametres)
+"""
+def consultaapirest():
+    superhero_name=input("Ingresa un superheroe: ")
+    parametres = {
 
-# Realizar la solicitud GET a la API
-response = requests.get(url)
-
-# Verificar el estado de la respuesta
-if response.status_code == 200:
-    # Obtener el resultado de la respuesta en formato JSON
-    data = response.json()
-
-    # Verificar si se encontró el superhéroe
-    if data['response'] == 'success':
-        # Obtener información sobre el primer resultado del superhéroe
-        superhero = data['results'][0]
+        "access_key": "https://superheroapi.com/api/access-token/"
+        "results-for": superhero_name
         
-        # Obtener el nombre, la biografía y las habilidades del superhéroe
-        nombre = superhero['name']
-        biografia = superhero['biography']
-        habilidades = superhero['powerstats']
-        
-        # Imprimir la información del superhéroe
-        print("Nombre:", nombre)
-        print("Biografía:", biografia)
-        print("Habilidades:", habilidades)
+        }
+    #url = "https://superheroapi.com/api/{YOUR_API_KEY}/search/{superhero_name}"
+    response = requests.get("https://superheroapi.com/api/",parametres)
+    if response.status_code == 200:
+        data = response.json()
+
+        if data['response'] == 'success':
+            superhero = data['results'][0]
+            name = superhero['name']
+            powerstats = superhero['powerstats']
+            
+            print('Nombre:', name)
+            print('Estadísticas de poder:')
+            for stat, value in powerstats.items():
+                print(f"{stat}: {value}")
+        else:
+            print('Superhéroe no encontrado.')
     else:
-        print("Superhéroe no encontrado.")
-else:
-    print("Error al acceder a la API:", response.status_code)
+        print('Error al acceder a la API:', response.status_code)
+
+
+consultaapirest()

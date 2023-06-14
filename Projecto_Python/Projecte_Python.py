@@ -2,6 +2,7 @@ import random
 import os
 import tkinter as tk
 import webbrowser
+import requests
 
 
 #Menu Principal
@@ -15,12 +16,14 @@ def menu():
     2. Agenda
     3. Juego - Ahorcado
     4. Ventana - Boton a Google
+    5. Chistes API
     0. Salir
 
     """)
     
     a = int(input("Selecciona una opcion: "))
     return a
+
 
 #Funcion lista aleatorias
 
@@ -55,10 +58,6 @@ def mostrar_menu_agenda():
     0. Salir
     
     """)
-
-
-
-
 
 def agregar_contacto():
     nombre = input("Nombre: ")
@@ -144,22 +143,25 @@ def eliminar_contacto():
 def abrir_google():
     webbrowser.open("https://www.google.com")
 
-def ventana(): 
-    ventana = tk.Tk()
-    ventana.title("Programa con Menú (Google)")
-    menu = tk.Menu(ventana)
-    
-    
-    boton_enviar = tk.Button(ventana, text="Enviar", command=abrir_google)
-    boton_enviar.grid(row=5, column=0)
+def ventana():
+    try: 
+        ventana = tk.Tk()
+        ventana.title("Programa con Menú (Google)")
+        menu = tk.Menu(ventana)
+        
+        
+        boton_enviar = tk.Button(ventana, text="Entrar en google", command=abrir_google)
+        boton_enviar.grid(row=5, column=0)
 
-    ventana.config(menu=menu)
+        ventana.config(menu=menu)
 
-    ventana.mainloop()
+        ventana.mainloop()
+
+    except:
+        ModuleNotFoundError
 
 
 #Funciones Ahorcado
-
 
 AHORCADO = ['''
     +---+
@@ -252,7 +254,6 @@ def empezar():
     print ('Quieres jugar de nuevo? (Si o No)')
     return input().lower().startswith('s')
 
-
 def juego_a():
     print ('A H O R C A D O')
     letraIncorrecta = ""
@@ -290,10 +291,19 @@ def juego_a():
 
 
 
+#Funciones de API
+
+def chistes():
+    url = "https://api.chucknorris.io/jokes/random"
+    respuesta = requests.get(url)
+    datos = respuesta.json()
+    
+    chiste = datos["value"]
+    print(chiste)
 
 
 
-
+#PP
 
 a = 1
 while a != 0:
@@ -339,11 +349,13 @@ while a != 0:
             print("Has escogido la opcion 4")
             aa=ventana()
 
+        case 5:
+            print("Has escogido la primera opcion")
+            bb=chistes()
+
         case 0:
             print("Nos vemos")
             a=0
 
         case other:
             print("Opcion no valida")
-
-        
